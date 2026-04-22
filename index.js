@@ -78,12 +78,39 @@ function getCharacterModal(character) {
         `;
 }
 
+const API_URL = 'https://akabab.github.io/superhero-api/api/all.json';
+const MAX_CHARACTERS = 24;
+
 /**
- * получим информацию о персонажах с API
+ * Получим информацию о персонажах с API
  */
-function fetchCharacters() {
-  return fetch('https://netology-api-marvel.herokuapp.com/characters')
-    .then(res => res.json())
+async function fetchCharacters() {
+    const response = await fetch(API_URL);
+
+    if (!response.ok) {
+        throw new Error(`API error: ${response.status}`);
+    }
+
+    const heroes = await response.json();
+
+    return (Array.isArray(heroes) ? heroes : [])
+        .filter((hero) => hero?.biography?.publisher === 'Marvel Comics')
+        .slice(0, MAX_CHARACTERS)
+        .map((hero) => ({
+            id: hero.id,
+            name: hero.name || 'Unknown',
+            thumbnail: hero?.images?.md || hero?.images?.sm || '',
+            modified: hero?.biography?.firstAppearance
+                ? `First appearance: ${hero.biography.firstAppearance}`
+                : 'First appearance: unknown',
+            description: [
+                hero?.biography?.fullName ? `Full name: ${hero.biography.fullName}` : '',
+                hero?.work?.occupation ? `Occupation: ${hero.work.occupation}` : '',
+                hero?.biography?.placeOfBirth ? `Place of birth: ${hero.biography.placeOfBirth}` : '',
+            ]
+                .filter(Boolean)
+                .join(' • '),
+        }));
 }
 
 /**
@@ -116,4 +143,3 @@ function getCharacterModals(characters) {
       }
     return CharacterModals;
 }
-
