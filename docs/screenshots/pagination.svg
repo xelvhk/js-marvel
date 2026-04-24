@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <rect width="1280" height="720" fill="#111827"/>
+  <rect x="0" y="0" width="1280" height="70" fill="#1f2937"/>
+  <text x="70" y="43" font-family="Arial, sans-serif" font-size="28" fill="#f3f4f6">Marvel</text>
+
+  <text x="90" y="120" font-family="Arial, sans-serif" font-size="38" fill="#ffffff">Пагинация</text>
+
+  <rect x="90" y="170" width="350" height="150" rx="12" fill="#374151"/>
+  <rect x="460" y="170" width="350" height="150" rx="12" fill="#374151"/>
+  <rect x="830" y="170" width="350" height="150" rx="12" fill="#374151"/>
+  <rect x="90" y="340" width="350" height="150" rx="12" fill="#374151"/>
+  <rect x="460" y="340" width="350" height="150" rx="12" fill="#374151"/>
+  <rect x="830" y="340" width="350" height="150" rx="12" fill="#374151"/>
+
+  <rect x="430" y="560" width="130" height="46" rx="8" fill="#4b5563"/>
+  <text x="495" y="590" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#f9fafb">Назад</text>
+  <text x="640" y="590" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#d1d5db">Страница 2 из 3</text>
+  <rect x="720" y="560" width="130" height="46" rx="8" fill="#4b5563"/>
+  <text x="785" y="590" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#f9fafb">Вперед</text>
+
+  <text x="1000" y="675" font-family="Arial, sans-serif" font-size="16" fill="#9ca3af">Demo mockup</text>
+</svg>

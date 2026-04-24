@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <rect width="1280" height="720" fill="#111827"/>
+  <rect x="0" y="0" width="1280" height="70" fill="#1f2937"/>
+  <text x="70" y="43" font-family="Arial, sans-serif" font-size="28" fill="#f3f4f6">Marvel</text>
+
+  <text x="90" y="120" font-family="Arial, sans-serif" font-size="38" fill="#ffffff">Персонажи Marvel</text>
+  <rect x="90" y="145" width="500" height="44" rx="8" fill="#f9fafb"/>
+  <text x="110" y="173" font-family="Arial, sans-serif" font-size="18" fill="#6b7280">Например: Spider</text>
+
+  <rect x="90" y="220" width="350" height="160" rx="12" fill="#374151"/>
+  <rect x="460" y="220" width="350" height="160" rx="12" fill="#374151"/>
+  <rect x="830" y="220" width="350" height="160" rx="12" fill="#374151"/>
+  <rect x="90" y="400" width="350" height="160" rx="12" fill="#374151"/>
+  <rect x="460" y="400" width="350" height="160" rx="12" fill="#374151"/>
+  <rect x="830" y="400" width="350" height="160" rx="12" fill="#374151"/>
+
+  <text x="1000" y="675" font-family="Arial, sans-serif" font-size="16" fill="#9ca3af">Demo mockup</text>
+</svg>

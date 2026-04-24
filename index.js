@@ -21,6 +21,7 @@ function getCharacterCard(character) {
                                 data-bs-toggle="modal"
                                 data-bs-target="#exampleModal-${character.id}"
                                 class="btn btn-secondary btn-sm"
+                                aria-label="Подробнее о персонаже ${character.name}"
                         >Подробнее</button>
                     </div>
                 </div>
@@ -69,6 +70,7 @@ function getCharacterModal(character) {
                             <button type="button"
                                     data-bs-dismiss="modal"
                                     class="btn btn-secondary  btn-sm"
+                                    aria-label="Закрыть окно с информацией о ${character.name}"
                             >Закрыть</button>
                         </div>
                     </div>
@@ -93,24 +95,7 @@ async function fetchCharacters() {
 
     const heroes = await response.json();
 
-    return (Array.isArray(heroes) ? heroes : [])
-        .filter((hero) => hero?.biography?.publisher === 'Marvel Comics')
-        .slice(0, MAX_CHARACTERS)
-        .map((hero) => ({
-            id: hero.id,
-            name: hero.name || 'Unknown',
-            thumbnail: hero?.images?.md || hero?.images?.sm || '',
-            modified: hero?.biography?.firstAppearance
-                ? `First appearance: ${hero.biography.firstAppearance}`
-                : 'First appearance: unknown',
-            description: [
-                hero?.biography?.fullName ? `Full name: ${hero.biography.fullName}` : '',
-                hero?.work?.occupation ? `Occupation: ${hero.work.occupation}` : '',
-                hero?.biography?.placeOfBirth ? `Place of birth: ${hero.biography.placeOfBirth}` : '',
-            ]
-                .filter(Boolean)
-                .join(' • '),
-        }));
+    return MarvelUtils.mapHeroesToMarvelCharacters(heroes, MAX_CHARACTERS);
 }
 
 /**
@@ -120,12 +105,12 @@ async function fetchCharacters() {
  * @returns {Array}
  */
 function getCharacterCards(characters) {
-    let CharacterCards = [];
-  for(let i=0; i< characters.length; i++){
-      let CharacterCard = getCharacterCard(characters[i]);
-      CharacterCards.push(CharacterCard);
-      }
-    return CharacterCards;
+    let characterCards = [];
+    for (let i = 0; i < characters.length; i++) {
+        let characterCard = getCharacterCard(characters[i]);
+        characterCards.push(characterCard);
+    }
+    return characterCards;
 }
 
 /**
@@ -135,11 +120,10 @@ function getCharacterCards(characters) {
  * @returns {Array}
  */
 function getCharacterModals(characters) {
-        let CharacterModals = [];
-  for(let i=0; i< characters.length;i++)
-    {
-      let CharacterCard = getCharacterModal(characters[i]);
-      CharacterModals.push(CharacterCard);
-      }
-    return CharacterModals;
+    let characterModals = [];
+    for (let i = 0; i < characters.length; i++) {
+        let characterCard = getCharacterModal(characters[i]);
+        characterModals.push(characterCard);
+    }
+    return characterModals;
 }
