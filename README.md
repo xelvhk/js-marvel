@@ -1,56 +1,42 @@
 # js-marvel
 
-Vanilla JavaScript mini-app that loads Marvel characters from a public API and renders cards + modals.
+Vanilla JavaScript app for Marvel character search, pagination, and API-driven UI
+
+Language: **English** | [Русский](README.ru.md)
 
 ## Problem
-Need a simple frontend project that demonstrates:
-- external API integration
-- async loading and error handling
-- dynamic DOM rendering without frameworks
+- This project solves a practical development or automation task.
+- The goal is to provide a clear implementation that is easy to run and extend.
 
 ## Stack
-- HTML5
-- CSS (Bootstrap 5)
-- JavaScript (ES6+)
-- Public Superhero API: `https://akabab.github.io/superhero-api/`
+- Primary language: JavaScript
+- Project-specific libraries and tools (see source files)
 
 ## Setup
-No build step required.
-
 ```bash
-git clone https://github.com/xelvhk/js-marvel.git
+git clone https://github.com/xelvhk/js-marvel
 cd js-marvel
-cp .env.example .env
-# open index.html in browser
-```
-
-Or run any local static server, for example:
-```bash
-python -m http.server 8000
-# then open http://localhost:8000
-```
-
-Run tests:
-```bash
-node --test tests/*.test.js
+# install dependencies (if present)
+# copy .env.example to .env (if present)
+# run the project
 ```
 
 ## Architecture
-- `index.html`: layout, containers, bootstrap imports
-- `index.js`: API call + card/modal template functions
-- `start.js`: app bootstrap, search flow, pagination state
-- `utils.js`: mapping/filter/pagination utilities (reusable + testable)
+- Entry points: application scripts and main modules in the repository root.
+- Core logic: domain-specific modules grouped by responsibility.
+- Data layer: local files/database/adapters depending on project scope.
 
-## Demo / Screenshots
-- Live demo: [https://xelvhk.github.io/js-marvel/](https://xelvhk.github.io/js-marvel/)
-- Demo mockups:
-
-![Home](docs/screenshots/home.svg)
-![Search](docs/screenshots/search.svg)
-![Pagination](docs/screenshots/pagination.svg)
+## Demo
+- Add screenshots/GIF or usage examples for key flows.
+- If deployed, add production URL.
 
 ## Roadmap
-- [x] Add search/filter by hero name
-- [x] Add client-side pagination
-- [x] Add unit tests for mapper functions
-- [x] Improve accessibility (ARIA labels, keyboard modal flow)
+- [ ] Add/refresh setup instructions for zero-friction onboarding.
+- [ ] Add/update tests for critical paths.
+- [ ] Improve docs and examples for real-world usage.
+
+## Status
+Active development
+
+## License
+GNU AGPLv3. See [LICENSE](LICENSE).
